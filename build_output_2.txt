@@ -1,0 +1,24 @@
+
+> react-hooks@0.1.0 build
+> next build
+
+▲ Next.js 16.1.6 (Turbopack)
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 16.6s
+  Running TypeScript ...
+Failed to compile.
+
+./components/demos/use-layout-effect/TooltipDemo.tsx:54:21
+Type error: Type 'RefObject<HTMLButtonElement | null>' is not assignable to type 'RefObject<HTMLElement>'.
+  Type 'HTMLButtonElement | null' is not assignable to type 'HTMLElement'.
+    Type 'null' is not assignable to type 'HTMLElement'.
+
+[0m [90m 52 |[39m             {hovered [33m&&[39m (
+ [90m 53 |[39m                 [33m<[39m[33mTooltip[39m
+[31m[1m>[22m[39m[90m 54 |[39m                     triggerRef[33m=[39m{triggerRef}
+ [90m    |[39m                     [31m[1m^[22m[39m
+ [90m 55 |[39m                     useLayout[33m=[39m{useLayout}
+ [90m 56 |[39m                     placement[33m=[39m{placement}
+ [90m 57 |[39m                 [33m>[39m[0m
+Next.js build worker exited with code: 1 and signal: null

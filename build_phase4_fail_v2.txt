@@ -1,0 +1,24 @@
+
+> react-hooks@0.1.0 build
+> next build
+
+▲ Next.js 16.1.6 (Turbopack)
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 14.3s
+  Running TypeScript ...
+Failed to compile.
+
+./components/demos/use-effect-event/EffectEventDemo.tsx:37:38
+Type error: Argument of type '(msg: string) => void' is not assignable to parameter of type '(...args: unknown[]) => unknown'.
+  Types of parameters 'msg' and 'args' are incompatible.
+    Type 'unknown' is not assignable to type 'string'.
+
+[0m [90m 35 |[39m     [90m// This function is STABLE and can be read inside useEffect,[39m
+ [90m 36 |[39m     [90m// but it always "sees" the latest props/state.[39m
+[31m[1m>[22m[39m[90m 37 |[39m     [36mconst[39m onMessage [33m=[39m useEffectEvent(onReceiveMessage)[33m;[39m
+ [90m    |[39m                                      [31m[1m^[22m[39m
+ [90m 38 |[39m
+ [90m 39 |[39m     useEffect(() [33m=>[39m {
+ [90m 40 |[39m         console[33m.[39mlog([32m`[${roomId}] Connecting...`[39m)[33m;[39m[0m
+Next.js build worker exited with code: 1 and signal: null

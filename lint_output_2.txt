@@ -1,0 +1,79 @@
+
+> react-hooks@0.1.0 lint
+> eslint
+
+
+C:\Users\Ankit\Desktop\react-hooks\components\demos\use-deferred-value\SearchDemo.tsx
+  85:5   error  Definition for rule 'react-compiler/react-compiler' was not found                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          react-compiler/react-compiler
+  86:19  error  Error: Cannot call impure function during render
+
+`performance.now` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+C:\Users\Ankit\Desktop\react-hooks\components\demos\use-deferred-value\SearchDemo.tsx:86:19
+  84 |     // We block for 20ms per item chunk to simulate "heavy render"
+  85 |     // eslint-disable-next-line react-compiler/react-compiler
+> 86 |     const start = performance.now();
+     |                   ^^^^^^^^^^^^^^^^^ Cannot call impure function
+  87 |
+  88 |     while (performance.now() - start < 50) {
+  89 |         // Burn CPU  react-hooks/purity
+  88:12  error  Error: Cannot call impure function during render
+
+`performance.now` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+C:\Users\Ankit\Desktop\react-hooks\components\demos\use-deferred-value\SearchDemo.tsx:88:12
+  86 |     const start = performance.now();
+  87 |
+> 88 |     while (performance.now() - start < 50) {
+     |            ^^^^^^^^^^^^^^^^^ Cannot call impure function
+  89 |         // Burn CPU
+  90 |     }
+  91 |                                                                                                                                    react-hooks/purity
+
+C:\Users\Ankit\Desktop\react-hooks\components\demos\use-id\IdDemo.tsx
+  37:81   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  37:86   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  41:81   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  41:86   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  67:96   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  67:101  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  77:107  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  77:112  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  89:84   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  89:89   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+C:\Users\Ankit\Desktop\react-hooks\components\demos\use-transition\TabDemo.tsx
+  59:62  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     react/no-unescaped-entities
+  59:68  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     react/no-unescaped-entities
+  60:38  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     react/no-unescaped-entities
+  60:46  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     react/no-unescaped-entities
+  60:66  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     react/no-unescaped-entities
+  60:72  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     react/no-unescaped-entities
+  95:5   error  Definition for rule 'react-compiler/react-compiler' was not found                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   react-compiler/react-compiler
+  96:23  error  Error: Cannot call impure function during render
+
+`performance.now` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+C:\Users\Ankit\Desktop\react-hooks\components\demos\use-transition\TabDemo.tsx:96:23
+  94 |     // Artificially slow down rendering
+  95 |     // eslint-disable-next-line react-compiler/react-compiler
+> 96 |     const startTime = performance.now();
+     |                       ^^^^^^^^^^^^^^^^^ Cannot call impure function
+  97 |
+  98 |     while (performance.now() - startTime < 400) {
+  99 |         // Do nothing for 400ms per render to simulate heavy load  react-hooks/purity
+  98:12  error  Error: Cannot call impure function during render
+
+`performance.now` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+C:\Users\Ankit\Desktop\react-hooks\components\demos\use-transition\TabDemo.tsx:98:12
+   96 |     const startTime = performance.now();
+   97 |
+>  98 |     while (performance.now() - startTime < 400) {
+      |            ^^^^^^^^^^^^^^^^^ Cannot call impure function
+   99 |         // Do nothing for 400ms per render to simulate heavy load
+  100 |     }
+  101 |                                                                                                      react-hooks/purity
+
+✖ 22 problems (22 errors, 0 warnings)
+

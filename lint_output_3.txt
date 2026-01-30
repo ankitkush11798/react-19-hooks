@@ -1,0 +1,39 @@
+
+> react-hooks@0.1.0 lint
+> eslint
+
+
+C:\Users\Ankit\Desktop\react-hooks\components\demos\use-deferred-value\SearchDemo.tsx
+  88:12  error  Error: Cannot call impure function during render
+
+`performance.now` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+C:\Users\Ankit\Desktop\react-hooks\components\demos\use-deferred-value\SearchDemo.tsx:88:12
+  86 |     const start = performance.now();
+  87 |
+> 88 |     while (performance.now() - start < 50) {
+     |            ^^^^^^^^^^^^^^^^^ Cannot call impure function
+  89 |         // Burn CPU
+  90 |     }
+  91 |  react-hooks/purity
+
+C:\Users\Ankit\Desktop\react-hooks\components\demos\use-id\IdDemo.tsx
+  67:96   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  67:101  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+C:\Users\Ankit\Desktop\react-hooks\components\demos\use-transition\TabDemo.tsx
+  98:12  error  Error: Cannot call impure function during render
+
+`performance.now` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+C:\Users\Ankit\Desktop\react-hooks\components\demos\use-transition\TabDemo.tsx:98:12
+   96 |     const startTime = performance.now();
+   97 |
+>  98 |     while (performance.now() - startTime < 400) {
+      |            ^^^^^^^^^^^^^^^^^ Cannot call impure function
+   99 |         // Do nothing for 400ms per render to simulate heavy load
+  100 |     }
+  101 |  react-hooks/purity
+
+✖ 4 problems (4 errors, 0 warnings)
+

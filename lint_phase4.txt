@@ -1,0 +1,70 @@
+
+> react-hooks@0.1.0 lint
+> eslint
+
+
+C:\Users\Ankit\Desktop\react-hooks\app\hooks\profiler\page.tsx
+  18:29  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  18:34  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+C:\Users\Ankit\Desktop\react-hooks\app\hooks\use\page.tsx
+  62:85   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  62:91   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  62:150  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  62:159  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+C:\Users\Ankit\Desktop\react-hooks\components\demos\profiler\ProfilerDemo.tsx
+   95:54  warning  'i' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        @typescript-eslint/no-unused-vars
+  132:23  error    Error: Cannot call impure function during render
+
+`performance.now` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+C:\Users\Ankit\Desktop\react-hooks\components\demos\profiler\ProfilerDemo.tsx:132:23
+  130 |     // Artificial slowdown
+  131 |     if (heavy) {
+> 132 |         const start = performance.now();
+      |                       ^^^^^^^^^^^^^^^^^ Cannot call impure function
+  133 |         while (performance.now() - start < 10) {
+  134 |             // Spin for 10ms
+  135 |         }  react-hooks/purity
+  133:16  error    Error: Cannot call impure function during render
+
+`performance.now` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+C:\Users\Ankit\Desktop\react-hooks\components\demos\profiler\ProfilerDemo.tsx:133:16
+  131 |     if (heavy) {
+  132 |         const start = performance.now();
+> 133 |         while (performance.now() - start < 10) {
+      |                ^^^^^^^^^^^^^^^^^ Cannot call impure function
+  134 |             // Spin for 10ms
+  135 |         }
+  136 |     }                              react-hooks/purity
+
+C:\Users\Ankit\Desktop\react-hooks\components\demos\use-api\UseApiDemo.tsx
+  78:33  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\Ankit\Desktop\react-hooks\components\demos\use-debug-value\DebugValueDemo.tsx
+  13:9  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+C:\Users\Ankit\Desktop\react-hooks\components\demos\use-debug-value\DebugValueDemo.tsx:13:9
+  11 |
+  12 |     useEffect(() => {
+> 13 |         setIsOnline(navigator.onLine);
+     |         ^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  14 |         const handleOnline = () => setIsOnline(true);
+  15 |         const handleOffline = () => setIsOnline(false);
+  16 |  react-hooks/set-state-in-effect
+
+C:\Users\Ankit\Desktop\react-hooks\components\demos\use-effect-event\EffectEventDemo.tsx
+  12:49  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  12:59  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  21:34  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+✖ 14 problems (13 errors, 1 warning)
+

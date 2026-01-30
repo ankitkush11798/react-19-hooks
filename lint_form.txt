@@ -1,0 +1,36 @@
+
+> react-hooks@0.1.0 lint
+> eslint
+
+
+C:\Users\Ankit\Desktop\react-hooks\components\demos\activity\ActivityDemo.tsx
+  10:28  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Ankit\Desktop\react-hooks\components\demos\use-debug-value\DebugValueDemo.tsx
+  15:9  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+C:\Users\Ankit\Desktop\react-hooks\components\demos\use-debug-value\DebugValueDemo.tsx:15:9
+  13 |
+  14 |
+> 15 |         setIsOnline(navigator.onLine);
+     |         ^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  16 |         const handleOnline = () => setIsOnline(true);
+  17 |         const handleOffline = () => setIsOnline(false);
+  18 |  react-hooks/set-state-in-effect
+
+C:\Users\Ankit\Desktop\react-hooks\components\demos\use-form-status\FormStatusDemo.tsx
+   10:22  warning  'data' is assigned a value but never used                                                                                         @typescript-eslint/no-unused-vars
+   10:28  warning  'method' is assigned a value but never used                                                                                       @typescript-eslint/no-unused-vars
+   10:36  warning  'action' is assigned a value but never used                                                                                       @typescript-eslint/no-unused-vars
+   64:33  warning  'formData' is defined but never used                                                                                              @typescript-eslint/no-unused-vars
+  104:30  error    React Hook "useFormStatus" is called conditionally. React Hooks must be called in the exact same order in every component render  react-hooks/rules-of-hooks
+  121:61  error    Comments inside children section of tag should be placed inside braces                                                            react/jsx-no-comment-textnodes
+
+✖ 8 problems (4 errors, 4 warnings)
+

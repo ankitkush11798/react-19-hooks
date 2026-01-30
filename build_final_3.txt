@@ -1,0 +1,40 @@
+
+> react-hooks@0.1.0 build
+> next build
+
+▲ Next.js 16.1.6 (Turbopack)
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 20.7s
+  Running TypeScript ...
+  Collecting page data using 7 workers ...
+  Generating static pages using 7 workers (0/20) ...
+  Generating static pages using 7 workers (5/20) 
+  Generating static pages using 7 workers (10/20) 
+  Generating static pages using 7 workers (15/20) 
+✓ Generating static pages using 7 workers (20/20) in 5.8s
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ○ /apis/taint
+├ ○ /components/activity
+├ ○ /components/view-transition
+├ ○ /hooks/profiler
+├ ○ /hooks/use
+├ ○ /hooks/use-action-state
+├ ○ /hooks/use-debug-value
+├ ○ /hooks/use-deferred-value
+├ ○ /hooks/use-effect-event
+├ ○ /hooks/use-id
+├ ○ /hooks/use-imperative-handle
+├ ○ /hooks/use-insertion-effect
+├ ○ /hooks/use-layout-effect
+├ ○ /hooks/use-optimistic
+├ ○ /hooks/use-sync-external-store
+└ ○ /hooks/use-transition
+
+
+○  (Static)  prerendered as static content
+

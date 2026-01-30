@@ -1,0 +1,22 @@
+
+> react-hooks@0.1.0 build
+> next build
+
+▲ Next.js 16.1.6 (Turbopack)
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 25.7s
+  Running TypeScript ...
+Failed to compile.
+
+./app/hooks/use-action-state/page.tsx:10:13
+Type error: Property '$$typeof' is missing in type 'ReactElement<any, any>' but required in type 'ForwardRefExoticComponent<Omit<LucideProps, "ref"> & RefAttributes<SVGSVGElement>>'.
+
+[0m [90m  8 |[39m             title[33m=[39m[32m"useActionState"[39m
+ [90m  9 |[39m             subtitle[33m=[39m[32m"The Form Orchestrator"[39m
+[31m[1m>[22m[39m[90m 10 |[39m             icon[33m=[39m{[33m<[39m[33mWorkflow[39m [33m/[39m[33m>[39m}
+ [90m    |[39m             [31m[1m^[22m[39m
+ [90m 11 |[39m             badges[33m=[39m{[[32m'React 19'[39m[33m,[39m [32m'Stable'[39m[33m,[39m [32m'Forms'[39m]}
+ [90m 12 |[39m         [33m>[39m
+ [90m 13 |[39m             [33m<[39m[33mdiv[39m className[33m=[39m[32m"space-y-8"[39m[33m>[39m[0m
+Next.js build worker exited with code: 1 and signal: null

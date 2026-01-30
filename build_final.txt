@@ -1,0 +1,22 @@
+
+> react-hooks@0.1.0 build
+> next build
+
+▲ Next.js 16.1.6 (Turbopack)
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 17.8s
+  Running TypeScript ...
+Failed to compile.
+
+./components/demos/activity/ActivityDemo.tsx:5:10
+Type error: Module '"react"' has no exported member 'unstable_Activity'.
+
+[0m [90m 3 |[39m [36mimport[39m { [33mGlassCard[39m } [36mfrom[39m [32m'@/components/ui/GlassCard'[39m[33m;[39m
+ [90m 4 |[39m [36mimport[39m { [33mActivity[39m [36mas[39m [33mActivityIcon[39m[33m,[39m [33mEye[39m[33m,[39m [33mEyeOff[39m } [36mfrom[39m [32m'lucide-react'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 5 |[39m [36mimport[39m { unstable_Activity [36mas[39m [33mActivity[39m[33m,[39m [33mSuspense[39m[33m,[39m useState } [36mfrom[39m [32m'react'[39m[33m;[39m
+ [90m   |[39m          [31m[1m^[22m[39m
+ [90m 6 |[39m
+ [90m 7 |[39m [90m// NOTE: <Activity> is the modern name for <Offscreen>.[39m
+ [90m 8 |[39m [90m// It allows React to keep a component's state and DOM alive while hiding it.[39m[0m
+Next.js build worker exited with code: 1 and signal: null
